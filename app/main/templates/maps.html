@@ -1,0 +1,30 @@
+<ion-view view-title="Maps">
+  <ion-content>
+
+    <ui-gmap-google-map center="vm.map.center" zoom="vm.map.zoom" draggable="true">
+
+      <ui-gmap-markers models="vm.coordinates" coords="'self'" icon="'icon'">
+      </ui-gmap-markers>
+    </ui-gmap-google-map>
+
+
+    <div ng-repeat="result in vm.results">
+      <div class="row">
+        <div class="column">
+          <p>
+            {{result.name | uppercase}}
+          </p>
+        </div>
+        <div class="column">
+          <input-stars max="5" list-class="star-list" ng-model="result.rating" ng-attr-readonly="true"></input-stars>
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+
+  </ion-content>
+</ion-view>
